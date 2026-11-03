@@ -14,8 +14,6 @@
  *   base-200  #______   sections and cards that step forward from the ground
  *   neutral   #______   the dark band behind the numbers
  */
-//https://coolors.co/7d837c-f1faee-a8dadc-457b9d-31587a-1d3557///
-
 [data-theme="gilmour"] {
   --color-primary: #1d3557;
   --color-base-100: #f1faee;
@@ -35,8 +33,8 @@
   /* The same for green: corporate's #00a43b measures 3.29:1 with white.
    * #15803d measures 5.02:1. */
   --color-success: #7d837c;
-  --color-primary-content: #a8dadc;
-  --color-neutral: #457b9d;
+  /* --color-primary-content: #______; */
+  /* --color-neutral: #______; */
 }
 
 /* ============================================================ TYPE

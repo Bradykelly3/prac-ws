@@ -28,9 +28,7 @@
 
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
   <meta name="theme-color" content="#ffffff" />
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/custom.css" />
-
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body class="bg-base-100 text-base-content">
@@ -291,19 +289,20 @@
         </div>
       </div>
     </section>
+
     <!-- ============================================================ CASE
            One piece of work as a story: what they needed, what you did, what
            changed. -->
     <section
       class="max-w-6xl mx-auto px-6 py-20 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
-      <img class="aspect-[4/3] w-full object-cover rounded-3xl shadow-xl order-last md:order-first" src="img/laptop.jpg"
-        data-reveal="left" width="1200" height="900" loading="lazy" alt="A designer at a laptop by a sunny window" />
+      <img class="aspect-[4/3] w-full object-cover rounded-3xl shadow-xl order-last md:order-first"
+        src="img/gilmour-academy.webp" data-reveal="left" width="1200" height="900" loading="lazy"
+        alt="A designer at a laptop by a sunny window" />
       <div>
-        <p class="text-primary font-bold uppercase tracking-widest text-xs mb-3">Case study</p>
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-6">What we did for a client</h2>
-        <p class="opacity-80 mb-4">What they needed, in their words if you have them.</p>
-        <p class="opacity-80 mb-4">What you did, and what measurably changed. A number here is worth more than three
-          adjectives.</p>
+        <p class="text-primary font-bold uppercase tracking-widest text-xs mb-3">Results from last season</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-6">How did we play this prior season?</h2>
+        <p class="opacity-80 mb-4"></p>
+        <p class="opacity-80 mb-4">The number of wins and losses from last season</p>
         <a class="link link-primary font-semibold inline-flex items-center gap-1 mb-8" href="work.html#case">Read the
           whole story <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -312,12 +311,12 @@
           </svg></a>
         <dl class="grid grid-cols-2 gap-6 border-t border-base-content/10 pt-6">
           <div>
-            <dt class="text-sm opacity-80">Before</dt>
-            <dd class="text-3xl font-extrabold" data-count>00</dd>
+            <dt class="text-sm opacity-80">Wins</dt>
+            <dd class="text-3xl font-extrabold" data-count>35</dd>
           </div>
           <div>
-            <dt class="text-sm opacity-80">After</dt>
-            <dd class="text-3xl font-extrabold text-primary" data-count>00</dd>
+            <dt class="text-sm opacity-80">Losses</dt>
+            <dd class="text-3xl font-extrabold text-primary" data-count>01</dd>
           </div>
         </dl>
       </div>
@@ -617,6 +616,44 @@
 
   <script src="js/site.js"></script>
   <script src="js/business.js"></script>
+  <!-- Code injected by live-server -->
+  <script>
+    // <![CDATA[  <-- For SVG support
+    if ('WebSocket' in window) {
+      (function () {
+        function refreshCSS() {
+          var sheets = [].slice.call(document.getElementsByTagName("link"));
+          var head = document.getElementsByTagName("head")[0];
+          for (var i = 0; i < sheets.length; ++i) {
+            var elem = sheets[i];
+            var parent = elem.parentElement || head;
+            parent.removeChild(elem);
+            var rel = elem.rel;
+            if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+              var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+              elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+            }
+            parent.appendChild(elem);
+          }
+        }
+        var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+        var address = protocol + window.location.host + window.location.pathname + '/ws';
+        var socket = new WebSocket(address);
+        socket.onmessage = function (msg) {
+          if (msg.data == 'reload') window.location.reload();
+          else if (msg.data == 'refreshcss') refreshCSS();
+        };
+        if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+          console.log('Live reload enabled.');
+          sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+        }
+      })();
+    }
+    else {
+      console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+    }
+    // ]]>
+  </script>
 </body>
 
 </html>
