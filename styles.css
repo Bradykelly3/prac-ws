@@ -17,10 +17,10 @@
 [data-theme="gilmour"] {
   --color-primary: #1d3557;
   --color-base-100: #f1faee;
-  --color-base-200: #a8dadc;
+  --color-base-200: #3e909e;
   --color-neutral: #457b9d;
   --color-base-success: #1d3557;
-  --color-success: #7d837c;
+  --color-success: #a8dadc;
 }
 
 /* Redeclare the theme's colors here to make them yours. Change `corporate` to the
